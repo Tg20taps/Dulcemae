@@ -305,8 +305,11 @@ registerForm.addEventListener('submit', async (event) => {
   submitButton.disabled = true;
   submitButton.textContent = 'Registrando...'; // Opcional: cambiar texto del botón
 
+  // Definimos la URL base de la API. Eventualmente la cambiaremos por la de Render.
+  const API_BASE_URL = 'http://localhost:5000';
+
   try {
-    const response = await fetch('/api/auth/register', {
+    const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
